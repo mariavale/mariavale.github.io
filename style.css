@@ -58,6 +58,7 @@ a:focus-visible, button:focus-visible {
 .card + .card { margin-top: 24px; }
 h2 { font-size: 1.25rem; margin: 0 0 16px; font-weight: 700; }
 h3 { font-size: 1rem; margin: 20px 0 6px; font-weight: 700; }
+h4 { font-size: .9rem; margin: 12px 0 2px; font-weight: 400; font-style: italic; color: var(--muted); }
 .card p { margin: 0 0 1em; max-width: 68ch; }
 
 .pets { display: flex; gap: 16px; align-items: flex-start; }
