@@ -1,47 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Homepage</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maria Valentini</title>
+<meta name="description" content="Maria Valentini is a PhD candidate in Computer Science and Cognitive Science at the University of Colorado Boulder, studying how children learn language.">
+
+<!-- Link previews (Slack, LinkedIn, iMessage, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maria Valentini">
+<meta property="og:description" content="PhD candidate in Computer Science and Cognitive Science at CU Boulder, studying how children learn language.">
+<meta property="og:url" content="https://mariavale.github.io/">
+<meta property="og:image" content="https://mariavale.github.io/headshot.jpg">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-    <a class="navbar-brand" href="index.html">Home</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="interests.html">Interests</a></li>
-        <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+<header class="top">
+  <div class="inner">
+    <img src="headshot.jpg" alt="Maria Valentini" width="104" height="104">
+    <div>
+      <h1>Maria Valentini</h1>
+      <p class="role">PhD candidate, Computer Science &amp; Cognitive Science, University of Colorado Boulder</p>
+      <ul class="links">
+        <li><a href="mailto:maria.valentini@colorado.edu">Email</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+        <li><a href="https://scholar.google.com/">Google Scholar</a></li><!-- TODO: replace with your Scholar profile URL -->
+        <li><a href="https://github.com/mariavale">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/maria-valentini/">LinkedIn</a></li>
       </ul>
     </div>
-  </nav>
-
-  <!-- Main Content -->
-  <div class="container my-5 d-flex flex-column flex-md-row align-items-center">
-    <img src="image.JPG" alt="My Photo" class="img-fluid rounded mb-4 mb-md-0" style="max-width: 200px;" />
-    <div class="ms-md-4">
-      <p>Hello! I'm Maria Valentini, a 4th year Computer Science and Cognitive Science PhD student at CU Boulder. My research focuses on educational NLP applications and computational psycholinguistics. specifically as they relate to early childhood word learning.</p>
-      <a href="https://nala-cub.github.io/" class="text-black" target="_blank">My Lab</a>
-    </div>
-    <a href="resume.pdf" class="btn btn-primary mt-1" download>Download Resume</a>
   </div>
+</header>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3 mt-auto">
-    <div>
-      <a href="https://github.com/mariavale" class="text-white me-3" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/maria-valentini-057756139/" class="text-white" target="_blank">LinkedIn</a>
+<div class="grid">
+<main>
+
+  <section class="card" id="about">
+    <h2>About</h2>
+    <p>I'm a PhD candidate in Computer Science and Cognitive Science at the University of Colorado Boulder, advised by Katharina von der Wense and Eliana Colunga. I'll graduate in spring 2027.</p>
+    <p>I study how young children learn language, using computational and statistical models both to understand that learning and to support it. I build and evaluate NLP tools that generate vocabulary-rich stories for shared reading, run word-learning studies with preschoolers and their caregivers, and compare how neural language models and children acquire grammar.</p>
+    <p>Outside research, I play tennis and hockey and look after two guinea pigs, Hakeem and Ginsburg.</p>
+  </section>
+
+  <section class="card" id="publications">
+    <h2>Publications</h2>
+    <div class="filters" role="group" aria-label="Filter publications">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="first" aria-pressed="false">First author</button>
+      <button type="button" data-filter="nlp" aria-pressed="false">NLP</button>
+      <button type="button" data-filter="cogsci" aria-pressed="false">Cognitive science</button>
     </div>
-  </footer>
+    <p class="count" aria-live="polite"></p>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!--
+      To add a paper, copy one <li> block and edit it.
+      data-tags: any of "first", "nlp", "cogsci" (space-separated); these drive the filter buttons.
+    -->
+    <ul class="pubs">
+      <li data-tags="first nlp">
+        <div class="venue">COLM 2026</div>
+        <div>
+          <a class="pub-title" href="https://arxiv.org/abs/2608.17399">An Investigation of Translationese in the Generations of Multilingual Large Language Models</a>
+          <div class="pub-authors"><strong>M. Valentini</strong>, T. Wright, J. Granados, E. Colunga, K. von der Wense</div>
+        </div>
+      </li>
+      <li data-tags="first cogsci">
+        <div class="venue">CogSci 2026</div>
+        <div>
+          <a class="pub-title" href="https://escholarship.org/uc/item/2xg831r5">Does Contextual Informativeness Predict Preschoolers' Word Learning from Stories?</a>
+          <div class="pub-authors"><strong>M. Valentini</strong>, J. Granados, K. von der Wense, E. Colunga</div>
+        </div>
+      </li>
+      <li data-tags="nlp">
+        <div class="venue">ACL 2026</div>
+        <div>
+          <a class="pub-title" href="https://arxiv.org/abs/2601.10925">Massively Multilingual Joint Segmentation and Glossing</a>
+          <div class="pub-authors">M. Ginn, L. Tjuatja, E. Rice, A. Marashian, <strong>M. Valentini</strong>, J. Xu, A. Palmer, G. Neubig</div>
+          <span class="award">Outstanding Paper Award</span>
+        </div>
+      </li>
+      <li data-tags="first nlp">
+        <div class="venue">COLING 2025</div>
+        <div>
+          <a class="pub-title" href="https://aclanthology.org/2025.coling-main.540/">Measuring Contextual Informativeness in Child-Directed Text</a>
+          <div class="pub-authors"><strong>M. Valentini</strong>, T. Wright, A. Marashian, J. Weber, E. Colunga, K. von der Wense</div>
+        </div>
+      </li>
+      <li data-tags="nlp">
+        <div class="venue">CoRL 2024</div>
+        <div>
+          <a class="pub-title" href="https://arxiv.org/abs/2403.07832">DeliGrasp: Inferring Object Properties with LLMs for Adaptive Grasp Policies</a>
+          <div class="pub-authors">W. Xie, <strong>M. Valentini</strong>, J. Lavering, N. Correll</div>
+        </div>
+      </li>
+      <li data-tags="cogsci">
+        <div class="venue">CogSci 2024</div>
+        <div>
+          <a class="pub-title" href="https://escholarship.org/uc/item/7v69f0dj">Evaluating LLMs as Tools to Support Early Vocabulary Learning</a>
+          <div class="pub-authors">J. Weber, <strong>M. Valentini</strong>, T. Wright, K. von der Wense, E. Colunga</div>
+        </div>
+      </li>
+      <li data-tags="first nlp">
+        <div class="venue">EMNLP 2023</div>
+        <div>
+          <a class="pub-title" href="https://aclanthology.org/2023.emnlp-main.218/">On the Automatic Generation and Simplification of Children's Stories</a>
+          <div class="pub-authors"><strong>M. Valentini</strong>, J. Weber, J. Salcido, T. Wright, E. Colunga, K. Kann</div>
+        </div>
+      </li>
+      <li data-tags="nlp">
+        <div class="venue">NLP4PI Workshop 2022</div>
+        <div>
+          <a class="pub-title" href="https://openreview.net/pdf?id=TUcx1OF8Qh">Generate Me a Bedtime Story: Leveraging Natural Language Processing for Early Vocabulary Enhancement</a>
+          <div class="pub-authors">T. Hall, <strong>M. Valentini</strong>, E. Colunga, K. Kann</div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+</main>
+<aside>
+
+  <section class="card" id="news">
+    <h2>News</h2>
+    <ul class="news">
+      <li><span class="date">Jan 2027</span>Giving an invited talk at the Linguistics Colloquium, Johannes Gutenberg University Mainz.</li>
+      <li><span class="date">Oct 2026</span>Named a Top Reviewer for NeurIPS 2026.</li>
+      <li><span class="date">Oct 2026</span>Presenting our paper on translationese in multilingual LLM generations at COLM 2026.</li>
+      <li><span class="date">2026</span>Our paper on massively multilingual segmentation and glossing received an Outstanding Paper Award at ACL 2026.</li>
+      <li><span class="date">2026</span>Received the CU Boulder CS Outstanding Teaching Assistant award.</li>
+    </ul>
+  </section>
+
+  <section class="card" id="teaching">
+    <h2>Teaching</h2>
+    <p>2026 Outstanding Teaching Assistant, CU Boulder Computer Science.</p>
+
+    <h3>Teaching assistant</h3>
+    <ul class="teaching">
+      <li><span class="code">CSCI 5832</span>Natural Language Processing (graduate)<span class="note">3 semesters</span></li>
+      <li><span class="code">CSCI 3202</span>Introduction to Artificial Intelligence</li>
+      <li><span class="code">CSCI 3308</span>Software Development Methods and Tools</li>
+      <li><span class="code">CSCI 1300</span>Introduction to Computer Science</li>
+      <li><span class="code">CSCI 1200</span>Introduction to Computational Thinking</li>
+    </ul>
+
+    <h3>Guest lectures</h3>
+    <ul class="teaching">
+      <li><span class="code">CSCI 5832</span>Natural Language Processing (graduate)<span class="note">2 lectures on transformers</span></li>
+      <li><span class="code">CSCI 3832</span>Natural Language Processing (undergraduate)<span class="note">2 lectures</span></li>
+    </ul>
+  </section>
+
+</aside>
+</div>
+
+<footer>Last updated October 2026</footer>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.filters button');
+  var items = document.querySelectorAll('.pubs li');
+  var count = document.querySelector('.count');
+
+  function apply(tag) {
+    var shown = 0;
+    items.forEach(function (li) {
+      var show = tag === 'all' || li.dataset.tags.split(' ').indexOf(tag) > -1;
+      li.hidden = !show;
+      if (show) shown++;
+    });
+    count.textContent = shown + (shown === 1 ? ' paper' : ' papers');
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true');
+      apply(b.dataset.filter);
+    });
+  });
+
+  apply('all');
+})();
+</script>
 </body>
 </html>
-
