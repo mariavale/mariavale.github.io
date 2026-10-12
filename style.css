@@ -60,7 +60,7 @@ h2 { font-size: 1.25rem; margin: 0 0 16px; font-weight: 700; }
 h3 { font-size: 1rem; margin: 20px 0 6px; font-weight: 700; }
 .card p { margin: 0 0 1em; max-width: 68ch; }
 
-.pets { display: flex; gap: 16px; align-items: center; }
+.pets { display: flex; gap: 16px; align-items: flex-start; }
 .pets img { width: 120px; height: 90px; object-fit: cover; flex-shrink: 0; }
 
 /* Publication filters */
